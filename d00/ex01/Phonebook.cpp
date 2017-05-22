@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/22 10:39:08 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/22 12:49:11 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/22 15:24:52 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,10 @@ class Phonebook {
 		std::string fave_meal;
 		std::string underwear_color;
 		std::string darkest_secret;
-		bool has_details;
+		bool 		has_details;
+
+		void	has_deets()
+		{
+			this->has_details = true;
+		}
 };
