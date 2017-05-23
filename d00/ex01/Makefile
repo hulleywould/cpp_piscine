@@ -6,22 +6,26 @@
 #    By: shulley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/22 11:34:30 by shulley           #+#    #+#              #
-#    Updated: 2017/05/22 12:46:40 by shulley          ###   ########.fr        #
+#    Updated: 2017/05/23 10:29:41 by shulley          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+FLAGS = -Wall -Werror -Wextra
+
 NAME = phonebook
 
-SRC = Phonebook.cpp			\
-	  init_phonebook.cpp   \
-	  main.cpp
+SRC =	Phonebook.cpp				\
+	  	init_phonebook.cpp		 	\
+		searchcontacts.cpp			\
+	  	main.cpp
 
 all:
-	clang++ -o $(NAME) $(SRC)
+	@clang++ -o $(NAME) $(SRC) $(FLAGS)
 
-clean: 
-	rm $(NAME)
+fclean:
+	@rm $(NAME)
 
 re:
-	clean all
+	@rm $(NAME)
+	@all
 

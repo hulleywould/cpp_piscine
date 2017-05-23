@@ -15,6 +15,8 @@
 
 class Phonebook {
 	public:
+		static int	contact_index;
+		int index;
 		std::string first_name;
 		std::string last_name;
 		std::string nickname;
@@ -27,9 +29,8 @@ class Phonebook {
 		std::string underwear_color;
 		std::string darkest_secret;
 		bool 		has_details;
-
-		void	has_deets()
+		bool	has_deets()
 		{
-			this->has_details = true;
+			return (this->has_details = true);
 		}
 };

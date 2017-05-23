@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/22 11:04:01 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/22 16:08:06 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/23 10:16:15 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,6 @@ int check_command(std::string command)
 	return (0);
 }
 
-int	search_list(Phonebook *contact)
-{
-	int	index;
-
-	index = 0;
-	if (contact[0].has_details != true)
-		std::cout << "no contacts available. " << std::endl;
-	else
-	{
-		std::cout << "     index|first name| last name|  nickname" << std::endl;
-		while (contact[index].has_details == true)
-		{
-			std::cout << std::setw(10) << index << "|";
-			if (std::contact[index].first_name.length() > 10)
-				std::cout << std::setw(10) << contact[index].first_name << "|";
-			std::cout << std::setw(10) << contact[index].last_name << "|";
-			std::cout << std::setw(10) << contact[index].nickname << std::endl;
-			index++;
-		}
-	}
-	return (0);
-}
-
 int	main(void)
 {
 	Phonebook contact[8];
@@ -55,17 +32,24 @@ int	main(void)
 	index = 0;
 	while (true)
 	{
-		std::cout << "ENTER COMMAND (ADD, SEARCH, DELETE, EXIT): " << std::endl;
+		std::cout << "ENTER COMMAND (ADD, SEARCH, EXIT): " << std::endl;
 		std::getline(std::cin, command);
 		if (check_command(command) == 1)
 		{
-			add_contact(&contact[index]);
-			index++;
+			if (index < 8)
+			{
+				add_contact(&contact[index]);
+				index++;
+			}
+			else
+				std::cout << "cannot add more contacts!" << std::endl;
 		}
 		else if (check_command(command) == 2)
-			search_list(contact);
+			search_list(contact, index);
 		else if (check_command(command) == -1)
 			return (0);
+		else
+			std::cout << "invalid command entered!" << std::endl;
 	}
 	return (0);
 }
