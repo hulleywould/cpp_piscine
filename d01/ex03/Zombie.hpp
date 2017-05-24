@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 13:13:48 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/23 13:37:04 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/24 13:37:39 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,16 @@
 
 #include <iostream>
 #include <string>
-#include "Zombie.cpp"
 
-class Zombie;
-
+class Zombie {
+	private:
+		std::string	type;
+		std::string	name;
+	public:
+		void announce();
+		void setType(std::string t);
+		void setName(std::string n);
+		std::string getType();
+		std::string getName();
+};
 #endif
