@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 11:17:15 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/23 11:58:58 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/24 13:09:32 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ponyOnTheHeap()
 	unsigned int	address;
 	Pony *speedy = new Pony();
 	address = (uintptr_t)speedy;
-	speedy->name = "speedy";
+	speedy->setName("speedy");
 	speedy->greet();
 	delete speedy;
 	return (address); 
@@ -26,7 +26,7 @@ int	ponyOnTheHeap()
 int ponyOnTheStack()
 {
 	Pony hector;
-	hector.name = "hector";
+	hector.setName("hector");
 	hector.greet();
 	return ((uintptr_t)&hector);
 }
