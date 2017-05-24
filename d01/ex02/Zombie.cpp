@@ -6,20 +6,34 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 13:15:03 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/23 14:10:53 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/24 13:18:33 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-class Zombie {
-	public:
-		std::string	type;
-		std::string	name;
-		void announce()
-		{
-			std::cout << "<" << this->name << "("
-				<< this->type << ")> Braiiiinnnnsss..." << std::endl;
-		}
-};
+void	Zombie::announce()
+{
+	std::cout << "<" << this->getName() << "("
+		<< this->getType() << ")> Braiiiinnnnsss..." << std::endl;
+}
+
+void	Zombie::setName(std::string n)
+{
+	this->name = n;
+}
+
+void	Zombie::setType(std::string t)
+{
+	this->type = t;
+}
+
+std::string	Zombie::getName()
+{
+	return this->name;
+}
+
+std::string Zombie::getType()
+{
+	return this->type;
+}

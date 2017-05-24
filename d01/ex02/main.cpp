@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 13:37:14 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/23 15:35:29 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/24 13:27:04 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main()
 {
 	ZombieEvent *dax = new ZombieEvent;
 	Zombie *new_zom = dax->newZombie("dax");
-	new_zom->type = "creat";
+	new_zom->setType("creat");
 	new_zom->announce();
 	delete dax;
 	
@@ -24,13 +24,13 @@ int	main()
 	rand2.randomChump();
 
 	Zombie *kling = new Zombie;
-	kling->name = "kling";
-	kling->type = "brainer";
+	kling->setName("kling");
+	kling->setType("brainer");
 	kling->announce();
 
 	Zombie mak;
-	mak.name = "mak";
-	mak.type = "makaka";
+	mak.setName("tak");
+	mak.setType("makaka");
 	mak.announce();
 
 	ZombieEvent *rand1 = new ZombieEvent;
