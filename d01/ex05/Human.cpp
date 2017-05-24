@@ -6,24 +6,18 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/24 09:10:16 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/24 10:50:19 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/24 14:06:59 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "Brain.hpp"
+#include "Human.hpp"
 
-class Human {
-	public:
-		Human() : mybrain() {}
-		const Brain& getBrain()
-		{
-			return mybrain;
-		}
-		std::string identify() const
-		{
-			return mybrain.identify();
-		}
-	private:
-		const Brain mybrain;
-};
+Human::Human() : mybrain() {}
+const Brain& Human::getBrain() const
+{
+	return mybrain;
+}
+std::string Human::identify() const
+{
+	return mybrain.identify();
+}
