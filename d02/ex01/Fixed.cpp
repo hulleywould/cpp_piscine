@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 13:37:36 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/25 14:48:30 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/25 15:03:32 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ float	Fixed::toFloat(void) const
 
 int Fixed::getRawBits() const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return fixedPoint;
 }
 
