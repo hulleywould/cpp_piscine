@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/29 12:27:33 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/29 16:23:03 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/29 16:33:49 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(std::string n, int g) : name(n)
 {
-	setGrade(g);
+	if (g < 1)
+		throw GradeTooHighException();
+	else if (g > 150)
+		throw GradeTooLowException();
+	else
+		setGrade(g);
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &copy)

@@ -6,7 +6,7 @@
 /*   By: shulley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/29 13:12:44 by shulley           #+#    #+#             */
-/*   Updated: 2017/05/29 16:25:00 by shulley          ###   ########.fr       */
+/*   Updated: 2017/05/29 16:48:16 by shulley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		main(void)
 {
-	Bureaucrat crat("sherwin", 1);
-	std::cout << crat;
 	try {
+		Bureaucrat crat("sherwin", 1);
+		std::cout << crat;
 		crat.incrementGrade();
 		std::cout << crat.getGrade() << std::endl;
 	}
