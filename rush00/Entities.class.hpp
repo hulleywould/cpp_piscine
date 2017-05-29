@@ -17,22 +17,27 @@
 #include <iostream>
 #include <string>
 
-class	Entities{
+class	Entities {
 
 	protected:
-		char			_avatar;
+		const char		*avatar;
 		Vector			pos;
 
 	public:
-        Entities( void );
-        Entities( Entities const & );
-        Entities& operator=( Entities const & );
-       ~Entities( void );
+		Entities( void );
+       	Entities( Entities const & );
+		Entities(Vector);
+        Entities& operator=( Entities const & entities );
+       	~Entities( void );
 
-		virtual char	getAvatar();
-		virtual void	setAvatar(char);
+		virtual const char	*getAvatar();
+		virtual void		setAvatar(const char *);
 		virtual	int		getX();
 		virtual	int		getY();
+		virtual	void		moveUp();
+		virtual void		moveDown();
+		virtual	void		moveLeft();
+		virtual void		moveRight();
 		virtual	void	setX(int);
 		virtual	void	setY(int);
 };

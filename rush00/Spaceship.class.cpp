@@ -12,20 +12,54 @@
 
 #include "Spaceship.class.hpp"
 
-Spaceship::Spaceship() :player()
+Spaceship::Spaceship()
 {
-	player->setAvatar('>');
-	player->_isAlive = true;
+	setX(50);
+	setY(50);
+	setAvatar(">");
+	setLife(true);
+	setHP(3);
 }
 
 Spaceship::~Spaceship()
 {
-	std::cout << "spaceship destroyed" << std::endl;
+}
+
+Spaceship::Spaceship(Vector vec)
+{
+	Vector pos;
+	pos = vec;
 }
 
 Spaceship::Spaceship(Spaceship const &copy)
 {
-	player = copy.player;
-	std::cout << "spaceship copy constuctor called" << std::endl;
+	Vector pos;
+	pos = copy.pos;
 }
 
+Spaceship&		Spaceship::operator=( Spaceship const & ship) {
+    if (this != &ship) {
+        *this = ship;
+    }
+    return *this;
+};
+
+void	Spaceship::setHP(int health)
+{
+	hitpoints = health;
+}
+
+int	Spaceship::getHP(void)
+{
+	return hitpoints;
+}
+
+void	Spaceship::setLife(bool islive)
+{
+	isAlive = islive;
+}
+
+bool	Spaceship::getLife(void)
+{
+	return isAlive;
+}

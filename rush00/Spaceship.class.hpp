@@ -1,18 +1,24 @@
-#ifndef SPACESHIP_H
-# define SPACESHIP_H
+#ifndef SPACESHIP_CLASS_HPP
+# define SPACESHIP_CLASS_HPP
 
-# include "Character.class.hpp"
+# include "Entities.class.hpp"
 
-class Spaceship : public Character {
+class Spaceship : public Entities {
 
-	protected:
-		Spaceship	*player;
-		Vector		pos;
+	private:
+		Vector	pos;
+		int	hitpoints;
+		bool	isAlive;	
 	public:
-	    Spaceship( void );
+		Spaceship( void );
         Spaceship( Spaceship const & );
-        Spaceship& operator=( Spaceship const & );
+		Spaceship(Vector);
+        Spaceship& operator=( Spaceship const & ship);
         ~Spaceship( void );
+		void	setHP(int);
+		int	getHP(void);
+		bool	getLife();
+		void	setLife(bool);
 };
 
 #endif
